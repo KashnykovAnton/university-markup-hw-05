@@ -478,11 +478,12 @@ button {
   color: var(--light);
 }
 
-.footer-right {
+.footer-center {
   width: 208px;
+  margin-right: 120px;
 }
 
-.footer-socials-title {
+.footer-paragraph-title {
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 500;
@@ -503,6 +504,50 @@ button {
 .footer-social-link:focus {
   background-color: var(--success);
 }
+
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-mail {
+  padding: 8px 16px;
+  background-color: transparent;
+  width: 264px;
+  height: 40px;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.48px;
+  color: var(--white-background);
+  border-radius: 4px;
+  border: 1px solid var(--white-background);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.footer-mail::placeholder {
+  color: var(--white-background);
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.48px;
+}
+
+.footer-mail:focus {
+  outline: none;
+}
+
+.footer-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 165px;
+  height: 40px;
+  padding-left: 24px;
+}
+
+.footer-icon {
+  fill: var(--white-background);
+}
+
 /* ================ /FOOTER ================ */
 
 /* ================ PORTFOLIO ================ */
@@ -642,6 +687,8 @@ button {
   transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
+  padding-top: 72px;
+  padding-bottom: 24px;
   background-color: var(--modal-background);
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
@@ -666,7 +713,7 @@ button {
     border var(--transition-effect);
 }
 
-.button-close .icon {
+.modal-close-icon {
   fill: var(--dark);
   transition: fill var(--transition-effect);
 }
@@ -677,8 +724,8 @@ button {
   background-color: var(--pressed-state);
 }
 
-.button-close:hover .icon,
-.button-close:focus .icon {
+.button-close:hover .modal-close-icon,
+.button-close:focus .modal-close-icon {
   fill: var(--white-background);
 }
 
@@ -690,5 +737,134 @@ button {
 
 .is-hidden .modal {
   transform: translate(-50%, -50%);
+}
+
+.modal-title {
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+  color: var(--dark);
+}
+
+/* Form */
+.form {
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.form-label {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.48px;
+  color: var(--sublle-text);
+}
+
+.form-input-thumb {
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  border-radius: 4px;
+  border: 1px solid var(--modal-overlay);
+  transition: border-color var(--transition-effect);
+}
+
+.form-input:focus {
+  border-color: var(--primary-brand);
+  outline-color: transparent;
+  outline-offset: 4px;
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  fill: var(--dark);
+  transition: fill var(--transition-effect);
+}
+
+.form-input-field:focus-within .form-icon {
+  fill: var(--primary-brand);
+}
+
+/* Textarea */
+.form-textarea-field {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.form-textarea {
+  padding: 8px 16px;
+  resize: none;
+  height: 120px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--modal-overlay);
+  transition: border-color var(--transition-effect);
+}
+
+.form-textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.48px;
+  color: var(--modal-overlay);
+}
+
+.form-textarea:focus {
+  border-color: var(--primary-brand);
+  outline-color: transparent;
+  outline-offset: 4px;
+}
+
+/* Checkbox */
+.form-checkbox-field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  color: var(--sublle-text);
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.48px;
+}
+
+.checkbox {
+  position: absolute;
+  appearance: none;
+}
+
+.checkbox-icon {
+  fill: transparent;
+  margin-right: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  border: 1px solid var(--modal-overlay);
+  cursor: pointer;
+  transition: fill var(--transition-effect),
+    background-color var(--transition-effect),
+    border-color var(--transition-effect);
+}
+
+.checkbox:checked + .checkbox-icon {
+  fill: var(--light);
+  background-color: var(--pressed-state);
+  border-color: transparent;
+}
+
+.form-checkbox-link {
+  color: var(--primary-brand);
+}
+
+.form-button {
+  display: block;
+  margin: 0 auto;
 }
 /* ================ /MODAL ================ */
