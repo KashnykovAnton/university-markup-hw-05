@@ -687,8 +687,7 @@ button {
   transform: translate(-50%, -50%);
   width: 408px;
   min-height: 584px;
-  padding-top: 72px;
-  padding-bottom: 24px;
+  padding: 72px 24px 24px 24px;
   background-color: var(--modal-background);
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
@@ -755,7 +754,12 @@ button {
   margin: 0 auto;
 }
 
+.form-input-field {
+  margin-bottom: 8px;
+}
+
 .form-label {
+  display: block;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
@@ -765,8 +769,6 @@ button {
 
 .form-input-thumb {
   position: relative;
-  margin-bottom: 8px;
-  display: block;
 }
 
 .form-input {
@@ -775,13 +777,13 @@ button {
   padding-left: 38px;
   border-radius: 4px;
   border: 1px solid var(--modal-overlay);
+  background-color: transparent;
+  outline: transparent;
   transition: border-color var(--transition-effect);
 }
 
 .form-input:focus {
   border-color: var(--primary-brand);
-  outline-color: transparent;
-  outline-offset: 4px;
 }
 
 .form-icon {
@@ -793,23 +795,28 @@ button {
   transition: fill var(--transition-effect);
 }
 
-.form-input-field:focus-within .form-icon {
+.form-input:focus + .form-icon {
   fill: var(--primary-brand);
 }
 
 /* Textarea */
 .form-textarea-field {
-  display: block;
   margin-bottom: 16px;
 }
 
 .form-textarea {
-  padding: 8px 16px;
-  resize: none;
-  height: 120px;
   width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.48px;
+  color: var(--modal-overlay);
+  resize: none;
   border-radius: 4px;
   border: 1px solid var(--modal-overlay);
+  background-color: transparent;
+  outline: transparent;
   transition: border-color var(--transition-effect);
 }
 
@@ -822,45 +829,42 @@ button {
 
 .form-textarea:focus {
   border-color: var(--primary-brand);
-  outline-color: transparent;
-  outline-offset: 4px;
 }
 
 /* Checkbox */
 .form-checkbox-field {
-  display: flex;
-  align-items: center;
   margin-bottom: 24px;
-  color: var(--sublle-text);
+}
+
+.checkbox-text {
+  display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.48px;
+  color: var(--sublle-text);
 }
 
-.checkbox {
-  position: absolute;
-  appearance: none;
-}
-
-.checkbox-icon {
-  fill: transparent;
+.checkbox-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
   margin-right: 8px;
-  padding: 3px;
-  border-radius: 2px;
+  fill: transparent;
   border: 1px solid var(--modal-overlay);
-  cursor: pointer;
-  transition: fill var(--transition-effect),
-    background-color var(--transition-effect),
-    border-color var(--transition-effect);
+  border-radius: 2px;
+  transition: background-color var(--transition-effect),
+    border var(--transition-effect), fill var(--transition-effect);
 }
 
-.checkbox:checked + .checkbox-icon {
+.checkbox:checked + .checkbox-text .checkbox-custom {
   fill: var(--light);
   background-color: var(--pressed-state);
-  border-color: transparent;
+  border: none;
 }
 
-.form-checkbox-link {
+.checkbox-link {
   color: var(--primary-brand);
 }
 
